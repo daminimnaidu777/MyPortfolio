@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Damini Portfolio</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>Damini M Naidu</h2>
+    <a href="/messages">Messages</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Hello, I'm <span>Damini M Naidu</span></h1>
+    <h2 id="typing"></h2>
+
+    <img src="/static/images/profile.jpg" class="profile-img">
+</section>
+
+<!-- ABOUT -->
+<section class="glass reveal">
+    <h2>About Me</h2>
+    <p>I am passionate about building modern, aesthetic and user-friendly web applications.</p>
+</section>
+
+<!-- CERTIFICATES -->
+<section class="glass reveal">
+    <h2>Certificates</h2>
+
+    <div class="cards">
+        <a href="/static/images/cert1.pdf" target="_blank" class="pdf-btn">Digital Engineering</a>
+        <a href="/static/images/cert2.pdf" target="_blank" class="pdf-btn">GitHub</a>
+        <a href="/static/images/cert3.pdf" target="_blank" class="pdf-btn">Node.Js</a>
+        <a href="/static/images/cert4.pdf" target="_blank" class="pdf-btn">Front End Web Developer</a>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="glass reveal">
+    <h2>Contact Me</h2>
+
+    <form action="/contact" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p>Email: daminimnaidu777@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/daminimnaidu777" target="_blank">View My Work</a></p>
+</section>
+
+<!-- TYPING EFFECT -->
+<script>
+let words = ["Web Developer", "Creative Thinker", "Future Engineer"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+    current = words[i];
+
+    if (isDeleting) {
+        document.getElementById("typing").innerHTML = current.substring(0, j--);
+    } else {
+        document.getElementById("typing").innerHTML = current.substring(0, j++);
+    }
+
+    if (!isDeleting && j === current.length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+        return;
+    }
+
+    if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % words.length;
+    }
+
+    setTimeout(type, isDeleting ? 50 : 100);
+}
+
+type();
+</script>
+
+<!-- SCROLL ANIMATION -->
+<script>
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.reveal').forEach(el => {
+        let top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

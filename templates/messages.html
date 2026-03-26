@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Messages</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>📩 All Messages</h1>
+
+{% for msg in messages %}
+<div class="card">
+    <h3>Name:</h3>
+    <p>{{ msg.name }}</p>
+
+    <h3>Email:</h3>
+    <p>{{ msg.email }}</p>
+
+    <h3>Message:</h3>
+    <p>{{ msg.message }}</p>
+</div>
+{% endfor %}
+
+<a href="/">⬅ Go Back</a>
+
+</body>
+</html>
