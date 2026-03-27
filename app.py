@@ -34,7 +34,7 @@ def init_db():
     cur.close()
     conn.close()
 
-# ✅ ADD THIS ROUTE
+# INIT ROUTE
 @app.route('/init')
 def initialize():
     try:
@@ -43,10 +43,12 @@ def initialize():
     except Exception as e:
         return f"❌ Error: {str(e)}"
 
+# HOME PAGE
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# CONTACT FORM
 @app.route('/contact', methods=['POST'])
 def contact():
     try:
@@ -65,3 +67,29 @@ def contact():
         conn.commit()
         cur.close()
         conn.close()
+
+        return render_template('result.html', name=name)
+
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+
+# VIEW MESSAGES
+@app.route('/messages')
+def messages():
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+
+        cur.execute("SELECT * FROM messages ORDER BY id DESC")
+        data = cur.fetchall()
+
+        cur.close()
+        conn.close()
+
+        return render_template('messages.html', data=data)
+
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+
+if __name__ == '__main__':
+    app.run(debug=True)
