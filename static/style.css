@@ -123,3 +123,39 @@ footer {
 .pdf-btn:hover {
     box-shadow: 0 0 15px #00f5ff;
 }
+footer {
+    text-align: center;      /* centers everything */
+    padding: 30px;
+    background: #020617;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer a {
+    color: #00f5ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+footer {
+    text-align: center;      /* centers everything */
+    padding: 30px;
+    background: #020617;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer a {
+    color: #00f5ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
