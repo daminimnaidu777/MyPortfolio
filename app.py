@@ -4,15 +4,19 @@ import os
 
 app = Flask(__name__)
 
-# ✅ Get DB URL from environment
+# GET DATABASE URL
 DATABASE_URL = os.getenv("DATABASE_URL")
+
+# FIX (important for Render sometimes)
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def get_db():
     if not DATABASE_URL:
         raise ValueError("DATABASE_URL is not set")
     return psycopg2.connect(DATABASE_URL)
 
-# ✅ Create table
+# CREATE TABLE
 def init_db():
     conn = get_db()
     cur = conn.cursor()
@@ -29,15 +33,6 @@ def init_db():
     conn.commit()
     cur.close()
     conn.close()
-
-# ✅ TEMP route to initialize DB (run once, then remove)
-@app.route('/init')
-def initialize():
-    try:
-        init_db()
-        return "✅ Database initialized successfully!"
-    except Exception as e:
-        return f"❌ Error initializing DB: {str(e)}"
 
 @app.route('/')
 def home():
@@ -62,28 +57,23 @@ def contact():
         cur.close()
         conn.close()
 
-        return render_template('result.html')
+        return render_template('result.html', name=name)
 
     except Exception as e:
-        return f"❌ Error: {str(e)}"
+        return f"Error: {str(e)}"
 
 @app.route('/messages')
 def messages():
-    try:
-        conn = get_db()
-        cur = conn.cursor()
+    conn = get_db()
+    cur = conn.cursor()
 
-        cur.execute("SELECT * FROM messages")
-        data = cur.fetchall()
+    cur.execute("SELECT * FROM messages ORDER BY id DESC")
+    data = cur.fetchall()
 
-        cur.close()
-        conn.close()
+    cur.close()
+    conn.close()
 
-        return render_template('messages.html', data=data)
+    return render_template('messages.html', data=data)
 
-    except Exception as e:
-        return f"❌ Error: {str(e)}"
-
-# ✅ Only for local run
 if __name__ == '__main__':
     app.run(debug=True)

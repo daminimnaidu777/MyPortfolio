@@ -1,5 +1,70 @@
-<h1>Message Sent Successfully 🎉</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Messages</title>
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
 
-<a href="/messages">View All Messages</a>
+        h1 {
+            color: #00f5ff;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 30px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #00f5ff;
+        }
+
+        th {
+            background: #020617;
+        }
+
+        tr:hover {
+            background: #1e293b;
+        }
+
+        a {
+            color: #00f5ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📩 All Messages (Admin Page)</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+    </tr>
+
+    {% for msg in data %}
+    <tr>
+        <td>{{ msg[0] }}</td>
+        <td>{{ msg[1] }}</td>
+        <td>{{ msg[2] }}</td>
+        <td>{{ msg[3] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 <br><br>
-<a href="/">Go Back</a>
+<a href="/">⬅ Back to Portfolio</a>
+
+</body>
+</html>
