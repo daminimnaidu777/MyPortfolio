@@ -12,7 +12,7 @@ def get_db():
         raise ValueError("DATABASE_URL is not set")
     return psycopg2.connect(DATABASE_URL)
 
-# ✅ Initialize DB safely
+# ✅ Create table
 def init_db():
     conn = get_db()
     cur = conn.cursor()
@@ -30,46 +30,60 @@ def init_db():
     cur.close()
     conn.close()
 
+# ✅ TEMP route to initialize DB (run once, then remove)
+@app.route('/init')
+def initialize():
+    try:
+        init_db()
+        return "✅ Database initialized successfully!"
+    except Exception as e:
+        return f"❌ Error initializing DB: {str(e)}"
+
 @app.route('/')
 def home():
     return render_template('index.html')
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    message = request.form.get('message')
+    try:
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
 
-    conn = get_db()
-    cur = conn.cursor()
+        conn = get_db()
+        cur = conn.cursor()
 
-    cur.execute(
-        "INSERT INTO messages (name, email, message) VALUES (%s, %s, %s)",
-        (name, email, message)
-    )
+        cur.execute(
+            "INSERT INTO messages (name, email, message) VALUES (%s, %s, %s)",
+            (name, email, message)
+        )
 
-    conn.commit()
-    cur.close()
-    conn.close()
+        conn.commit()
+        cur.close()
+        conn.close()
 
-    return render_template('result.html')
+        return render_template('result.html')
+
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
 
 @app.route('/messages')
 def messages():
-    conn = get_db()
-    cur = conn.cursor()
+    try:
+        conn = get_db()
+        cur = conn.cursor()
 
-    cur.execute("SELECT * FROM messages")
-    data = cur.fetchall()
+        cur.execute("SELECT * FROM messages")
+        data = cur.fetchall()
 
-    cur.close()
-    conn.close()
+        cur.close()
+        conn.close()
 
-    return render_template('messages.html', data=data)
+        return render_template('messages.html', data=data)
 
-# ✅ IMPORTANT: Do NOT auto-run init_db on import
-# This prevents Gunicorn crash
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
 
+# ✅ Only for local run
 if __name__ == '__main__':
-    init_db()   # runs only locally
     app.run(debug=True)
