@@ -4,12 +4,15 @@ import os
 
 app = Flask(__name__)
 
-DATABASE_URL = os.environ.get("postgresql://damini:TPiR5DSO7AoP6QgShxmfiunUCgy6C9gG@dpg-d72g6i0ule4c73e4iqug-a.oregon-postgres.render.com/portfoliodb_pjsy")
+# ✅ Get DB URL from environment
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 def get_db():
+    if not DATABASE_URL:
+        raise ValueError("DATABASE_URL is not set")
     return psycopg2.connect(DATABASE_URL)
 
-# CREATE TABLE
+# ✅ Initialize DB safely
 def init_db():
     conn = get_db()
     cur = conn.cursor()
@@ -26,8 +29,6 @@ def init_db():
     conn.commit()
     cur.close()
     conn.close()
-
-init_db()
 
 @app.route('/')
 def home():
@@ -66,5 +67,9 @@ def messages():
 
     return render_template('messages.html', data=data)
 
+# ✅ IMPORTANT: Do NOT auto-run init_db on import
+# This prevents Gunicorn crash
+
 if __name__ == '__main__':
+    init_db()   # runs only locally
     app.run(debug=True)
