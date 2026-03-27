@@ -7,7 +7,7 @@ app = Flask(__name__)
 # GET DATABASE URL
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# FIX (important for Render sometimes)
+# FIX for Render
 if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
@@ -34,6 +34,15 @@ def init_db():
     cur.close()
     conn.close()
 
+# ✅ ADD THIS ROUTE
+@app.route('/init')
+def initialize():
+    try:
+        init_db()
+        return "✅ Database initialized successfully!"
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -56,24 +65,3 @@ def contact():
         conn.commit()
         cur.close()
         conn.close()
-
-        return render_template('result.html', name=name)
-
-    except Exception as e:
-        return f"Error: {str(e)}"
-
-@app.route('/messages')
-def messages():
-    conn = get_db()
-    cur = conn.cursor()
-
-    cur.execute("SELECT * FROM messages ORDER BY id DESC")
-    data = cur.fetchall()
-
-    cur.close()
-    conn.close()
-
-    return render_template('messages.html', data=data)
-
-if __name__ == '__main__':
-    app.run(debug=True)
