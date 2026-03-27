@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(120deg, #0f172a, #1e293b);
+    background: #0f172a;
     color: white;
 }
 
@@ -9,48 +9,58 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 50px;
 }
 
-nav h2 {
-    color: #38bdf8;
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
 }
 
 /* HERO */
 .hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px;
+}
+
+/* TEXT */
+.hero-text h2 {
+    font-size: 40px;
+}
+
+.hero-text span {
+    color: #00f5ff;
+}
+
+/* HEXAGON IMAGE */
+.hero-img img {
+    width: 250px;
+    clip-path: polygon(
+        25% 5%, 75% 5%, 
+        100% 50%, 
+        75% 95%, 
+        25% 95%, 
+        0% 50%
+    );
+    border: 3px solid #00f5ff;
+    box-shadow: 0 0 25px #00f5ff;
+}
+
+/* SECTION */
+.section {
+    padding: 50px;
     text-align: center;
-    padding: 100px 20px;
-}
-
-.hero span {
-    background: linear-gradient(90deg, #38bdf8, #22c55e);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-#typing {
-    margin-top: 10px;
-    color: #22c55e;
-}
-
-/* PROFILE IMAGE */
-.profile-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-top: 20px;
-    border: 3px solid #38bdf8;
-    box-shadow: 0 0 20px #38bdf8;
-}
-
-/* GLASS SECTIONS */
-.glass {
-    margin: 40px;
-    padding: 40px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
 }
 
 /* CARDS */
@@ -60,52 +70,56 @@ nav h2 {
     flex-wrap: wrap;
 }
 
-/* PDF BUTTON */
-.pdf-btn {
+.card {
+    background: #1e293b;
+    padding: 20px;
     margin: 10px;
-    padding: 12px 20px;
-    background: linear-gradient(90deg, #38bdf8, #22c55e);
-    color: white;
     border-radius: 10px;
-    text-decoration: none;
+    border: 1px solid #00f5ff;
 }
 
-.pdf-btn:hover {
-    box-shadow: 0 0 15px #38bdf8;
+/* CERTIFICATE IMAGES */
+.cards img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #00f5ff;
 }
 
 /* FORM */
-form input, textarea {
+input, textarea {
     display: block;
     margin: 10px auto;
     padding: 10px;
     width: 250px;
-    border-radius: 8px;
-    border: none;
 }
 
 /* BUTTON */
 button {
     padding: 10px 20px;
-    background: linear-gradient(90deg, #38bdf8, #22c55e);
+    background: #00f5ff;
     border: none;
-    color: white;
-    border-radius: 20px;
+    color: black;
     cursor: pointer;
 }
 
-button:hover {
-    box-shadow: 0 0 15px #38bdf8;
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+.pdf-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #00f5ff;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-/* SCROLL ANIMATION */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.pdf-btn:hover {
+    box-shadow: 0 0 15px #00f5ff;
 }

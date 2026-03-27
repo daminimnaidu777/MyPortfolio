@@ -1,9 +1,24 @@
 from flask import Flask, render_template, request
+import sqlite3
 
 app = Flask(__name__)
 
-# Store messages (temporary storage)
-messages = []
+# CREATE DATABASE
+def init_db():
+    conn = sqlite3.connect('messages.db')
+    cur = conn.cursor()
+    cur.execute('''
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            email TEXT,
+            message TEXT
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+init_db()
 
 @app.route('/')
 def home():
@@ -15,18 +30,28 @@ def contact():
     email = request.form.get('email')
     message = request.form.get('message')
 
-    # Save message
-    messages.append({
-        "name": name,
-        "email": email,
-        "message": message
-    })
+    conn = sqlite3.connect('messages.db')
+    cur = conn.cursor()
 
-    return render_template('result.html', name=name, email=email, message=message)
+    cur.execute("INSERT INTO messages (name, email, message) VALUES (?, ?, ?)",
+                (name, email, message))
+
+    conn.commit()
+    conn.close()
+
+    return render_template('result.html', name=name)
 
 @app.route('/messages')
-def show_messages():
-    return render_template('messages.html', messages=messages)
+def messages():
+    conn = sqlite3.connect('messages.db')
+    cur = conn.cursor()
+
+    cur.execute("SELECT * FROM messages")
+    data = cur.fetchall()
+
+    conn.close()
+
+    return render_template('messages.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)

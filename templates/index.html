@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Damini Portfolio</title>
+    <title>Damini M Naidu Portfolio</title>
     <link rel="stylesheet" href="/static/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
@@ -10,26 +10,50 @@
 
 <!-- NAVBAR -->
 <nav>
-    <h2>Damini M Naidu</h2>
-    <a href="/messages">Messages</a>
+    <h2>Portfolio.</h2>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#cert">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Hello, I'm <span>Damini M Naidu</span></h1>
-    <h2 id="typing"></h2>
+    <div class="hero-text">
+        <h1>Hello, It's Me</h1>
+        <h2>Damini</h2>
+        <h3>And I'm a <span>Web Developer</span></h3>
+        <p>I create modern and aesthetic websites.</p>
+    </div>
 
-    <img src="/static/images/profile.jpg" class="profile-img">
+    <div class="hero-img">
+        <img src="/static/images/profile.jpg">
+    </div>
 </section>
 
 <!-- ABOUT -->
-<section class="glass reveal">
+<section id="about" class="section">
     <h2>About Me</h2>
-    <p>I am passionate about building modern, aesthetic and user-friendly web applications.</p>
+    <p>I am passionate about technology and building creative websites.</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+    <h2>Skills</h2>
+
+    <div class="cards">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">Python</div>
+        <div class="card">Flask</div>
+    </div>
 </section>
 
 <!-- CERTIFICATES -->
-<section class="glass reveal">
+<section id="cert" class="section">
     <h2>Certificates</h2>
 
     <div class="cards">
@@ -41,62 +65,22 @@
 </section>
 
 <!-- CONTACT -->
-<section class="glass reveal">
+<section id="contact" class="section">
     <h2>Contact Me</h2>
 
     <form action="/contact" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
     </form>
-
-    <p>Email: daminimnaidu777@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/daminimnaidu777" target="_blank">View My Work</a></p>
 </section>
 
-<!-- TYPING EFFECT -->
-<script>
-let words = ["Web Developer", "Creative Thinker", "Future Engineer"];
-let i = 0, j = 0, current = "", isDeleting = false;
-
-function type() {
-    current = words[i];
-
-    if (isDeleting) {
-        document.getElementById("typing").innerHTML = current.substring(0, j--);
-    } else {
-        document.getElementById("typing").innerHTML = current.substring(0, j++);
-    }
-
-    if (!isDeleting && j === current.length) {
-        isDeleting = true;
-        setTimeout(type, 1000);
-        return;
-    }
-
-    if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % words.length;
-    }
-
-    setTimeout(type, isDeleting ? 50 : 100);
-}
-
-type();
-</script>
-
-<!-- SCROLL ANIMATION -->
-<script>
-window.addEventListener('scroll', () => {
-    document.querySelectorAll('.reveal').forEach(el => {
-        let top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-            el.classList.add('active');
-        }
-    });
-});
-</script>
+<!-- FOOTER -->
+<footer>
+    <p>Email: daminimnaidu777@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/daminimnaidu777" target="_blank">Click Here</a></p>
+</footer>
 
 </body>
 </html>

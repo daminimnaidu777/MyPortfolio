@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Messages</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Messages</title>
 </head>
 
 <body>
 
-<h1>📩 All Messages</h1>
+<h1>All Messages</h1>
 
-{% for msg in messages %}
-<div class="card">
-    <h3>Name:</h3>
-    <p>{{ msg.name }}</p>
-
-    <h3>Email:</h3>
-    <p>{{ msg.email }}</p>
-
-    <h3>Message:</h3>
-    <p>{{ msg.message }}</p>
+{% for msg in data %}
+<div>
+    <p><b>Name:</b> {{ msg[1] }}</p>
+    <p><b>Email:</b> {{ msg[2] }}</p>
+    <p><b>Message:</b> {{ msg[3] }}</p>
+    <hr>
 </div>
 {% endfor %}
 
-<a href="/">⬅ Go Back</a>
+<a href="/">Back</a>
 
 </body>
 </html>
