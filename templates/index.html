@@ -1,94 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Damini Portfolio</title>
+<title> Damini M NaiduPortfolio</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<!-- BUTTERFLIES -->
-<div class="butterflies">
-    <span>🦋</span><span>🦋</span><span>🦋</span>
-</div>
-
-<!-- FIREFLIES -->
-<div class="fireflies"></div>
-
-<!-- NAVBAR -->
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
 <section id="home" class="parallax hero">
-    <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
-    <h1>Damini M Naidu</h1>
-    <p>Creative Developer ✨</p>
+<img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
+<h1>Damini M Naidu</h1>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section">
 <h2>About Me</h2>
-<p>
-I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University. 
-I am a highly motivated, goal-oriented, and independent individual who believes in consistency, growth, and self-discipline. 
-I am passionate about technology, creativity, and building unique digital experiences that stand out.
-</p>
+<p>I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University. I am a motivated, goal-oriented and independent individual passionate about technology.</p>
 </section>
 
-<!-- EDUCATION -->
 <section id="education" class="parallax2 section">
 <h2>Education</h2>
 <div class="card">School - Mother Theresa Memorial School (2010–2023)</div>
-<div class="card">College - East Point PU College (2023–2025)</div>
-<div class="card">Degree - Kristu Jayanti University (2025–2028)</div>
+<div class="card">PU - East Point College (2023–2025)</div>
+<div class="card">BCA - Kristu Jayanti University (2025–2028)</div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" class="section">
 <h2>Skills</h2>
 <div class="card">Python</div>
-<div class="card">HTML, CSS, JS</div>
-<div class="card">PostgreSQL</div>
+<div class="card">Web Development</div>
+<div class="card">HTML</div>
+<div class="card">CSS/Java Script</div>
+
 </section>
 
-<!-- CERTIFICATES -->
 <section id="certificates" class="parallax3 section">
 <h2>Certificates</h2>
 
 <div class="card">
-<a href="{{ url_for('static', filename='images/cert1.pdf') }}" target="_blank">Open Digital Engineering</a>
+<a href="{{ url_for('static', filename='images/cert1.pdf') }}" target="_blank">Open Certificate 1</a>
 </div>
 
 <div class="card">
-<a href="{{ url_for('static', filename='images/cert2.pdf') }}" target="_blank">Open GitHub</a>
+<a href="{{ url_for('static', filename='images/cert2.pdf') }}" target="_blank">Open Certificate 2</a>
 </div>
 
 <div class="card">
-<a href="{{ url_for('static', filename='images/cert3.pdf') }}" target="_blank">Open Node.JS</a>
+<a href="{{ url_for('static', filename='images/cert3.pdf') }}" target="_blank">Open Certificate 3</a>
 </div>
 
 <div class="card">
-<a href="{{ url_for('static', filename='images/cert4.pdf') }}" target="_blank">Open Front End Web Developer</a>
+<a href="{{ url_for('static', filename='images/cert4.pdf') }}" target="_blank">Open Certificate 4</a>
 </div>
-
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
-<h2>Contact Me</h2>
+<h2>Contact</h2>
 
 <form action="/contact" method="POST">
-<input type="text" name="name" placeholder="Your Name" required><br>
-<input type="email" name="email" placeholder="Your Email" required><br>
-<textarea name="message" placeholder="Your Message" required></textarea><br>
+<input name="name" placeholder="Name" required><br>
+<input name="email" placeholder="Email" required><br>
+<textarea name="message" placeholder="Message"></textarea><br>
 <button type="submit">Send</button>
 </form>
 
@@ -100,12 +80,9 @@ I am passionate about technology, creativity, and building unique digital experi
 
 </section>
 
-<footer>
-© 2026 Damini M Naidu | All Rights Reserved
-</footer>
-
 </body>
 </html>
+
 
 
 

@@ -1,6 +1,7 @@
+/* RESET */
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: 'Segoe UI', sans-serif;
     color: white;
     scroll-behavior: smooth;
 }
@@ -9,120 +10,112 @@ body {
 nav {
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.7);
+    top: 0;
+    background: rgba(0,0,0,0.5);
     padding: 15px;
     text-align: center;
     z-index: 1000;
 }
 
 nav a {
-    color: cyan;
+    color: white;
     margin: 15px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* HERO */
 .hero {
     height: 100vh;
     text-align: center;
-    padding-top: 120px;
+    padding-top: 150px;
 }
 
 /* PROFILE */
 .profile {
-    width: 160px;
+    width: 170px;
+    height: 170px;
     border-radius: 50%;
-    box-shadow: 0 0 20px cyan;
+    border: 3px solid white;
+    box-shadow: 0 0 25px white;
 }
 
-/* PARALLAX */
+/* 🌄 PARALLAX BACKGROUNDS (REAL WORKING LINKS) */
 .parallax {
-    background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") fixed;
-    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1974&auto=format&fit=crop");
 }
 
 .parallax2 {
-    background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") fixed;
-    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop");
 }
 
 .parallax3 {
-    background: url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e") fixed;
-    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1974&auto=format&fit=crop");
 }
 
-/* SECTIONS */
+/* PARALLAX EFFECT */
+.parallax, .parallax2, .parallax3 {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* SECTION */
 .section {
-    padding: 100px;
+    padding: 100px 20px;
     text-align: center;
     background: rgba(0,0,0,0.6);
 }
 
 /* CARDS */
 .card {
+    background: rgba(255,255,255,0.1);
     margin: 20px auto;
     padding: 20px;
-    width: 60%;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
+    border-radius: 15px;
+    width: 70%;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 /* FORM */
 input, textarea {
-    width: 60%;
     padding: 10px;
-    margin: 10px;
+    width: 60%;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
 }
 
 /* BUTTON */
 button {
-    padding: 10px 20px;
-    background: cyan;
+    background: white;
+    color: black;
     border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
 }
 
-/* BUTTERFLIES */
-.butterflies span {
-    position: fixed;
-    font-size: 30px;
-    animation: fly 10s linear infinite;
+/* LINKS */
+.links a {
+    display: block;
+    margin: 10px;
+    color: white;
 }
 
-.butterflies span:nth-child(1){ left:10%; animation-delay:0s;}
-.butterflies span:nth-child(2){ left:50%; animation-delay:3s;}
-.butterflies span:nth-child(3){ left:80%; animation-delay:6s;}
-
-@keyframes fly {
-    0% { top:100%; }
-    100% { top:-10%; }
-}
-
-/* FIREFLIES */
-.fireflies::before {
-    content:"";
-    position: fixed;
-    width:100%;
-    height:100%;
-    background: radial-gradient(circle, rgba(255,255,200,0.2) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: glow 3s infinite;
-}
-
-@keyframes glow {
-    50% { opacity:0.5; }
-}
-
-/* SUCCESS */
+/* SUCCESS PAGE */
 .success-page {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-
 .success-box {
-    background:white;
-    color:black;
-    padding:30px;
-    border-radius:15px;
+    background: white;
+    color: black;
+    padding: 40px;
+    border-radius: 20px;
 }
