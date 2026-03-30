@@ -1,121 +1,98 @@
-/* RESET */
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial;
+    background: #000;
     color: white;
-    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
 nav {
-    position: fixed;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: black;
+    position: sticky;
     top: 0;
-    background: rgba(0,0,0,0.5);
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
 }
 
 nav a {
-    color: white;
-    margin: 15px;
+    color: cyan;
+    margin: 10px;
     text-decoration: none;
-    font-weight: bold;
 }
 
 /* HERO */
 .hero {
-    height: 100vh;
     text-align: center;
-    padding-top: 150px;
-}
-
-/* PROFILE */
-.profile {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 25px white;
-}
-
-/* 🌄 PARALLAX BACKGROUNDS (REAL WORKING LINKS) */
-.parallax {
-    background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1974&auto=format&fit=crop");
-}
-
-.parallax2 {
-    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop");
-}
-
-.parallax3 {
-    background-image: url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1974&auto=format&fit=crop");
-}
-
-/* PARALLAX EFFECT */
-.parallax, .parallax2, .parallax3 {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-/* SECTION */
-.section {
     padding: 100px 20px;
+}
+
+.profile {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px cyan;
+}
+
+.neon-text {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* SECTIONS */
+section {
+    padding: 50px 20px;
     text-align: center;
-    background: rgba(0,0,0,0.6);
 }
 
 /* CARDS */
 .card {
-    background: rgba(255,255,255,0.1);
-    margin: 20px auto;
+    background: #111;
+    margin: 15px auto;
     padding: 20px;
-    border-radius: 15px;
-    width: 70%;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px cyan;
 }
 
 /* FORM */
 input, textarea {
-    padding: 10px;
     width: 60%;
-    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
     border: none;
-    margin-bottom: 10px;
 }
 
 /* BUTTON */
 button {
-    background: white;
-    color: black;
+    padding: 10px 20px;
+    background: cyan;
     border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
 }
 
 /* LINKS */
 .links a {
-    display: block;
     margin: 10px;
-    color: white;
+    color: cyan;
 }
 
-/* SUCCESS PAGE */
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+}
+
+/* SUCCESS */
 .success-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
 .success-box {
-    background: white;
-    color: black;
-    padding: 40px;
-    border-radius: 20px;
+    background: black;
+    padding: 30px;
+    border: 1px solid cyan;
 }

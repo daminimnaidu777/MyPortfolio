@@ -1,72 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin - Messages</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        body {
-            background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1974&auto=format&fit=crop");
-            background-size: cover;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-        }
-
-        table {
-            margin: 50px auto;
-            border-collapse: collapse;
-            width: 80%;
-            background: rgba(0,0,0,0.7);
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid white;
-        }
-
-        th {
-            background: black;
-        }
-
-        tr:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        h1 {
-            margin-top: 100px;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-    </style>
+<title>Messages</title>
 </head>
 
 <body>
 
-<h1>📩 All Messages (Admin Panel)</h1>
+<h1>All Messages</h1>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Message</th>
-    </tr>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Message</th>
+</tr>
 
-    {% for msg in data %}
-    <tr>
-        <td>{{ msg[0] }}</td>
-        <td>{{ msg[1] }}</td>
-        <td>{{ msg[2] }}</td>
-        <td>{{ msg[3] }}</td>
-    </tr>
-    {% endfor %}
+{% for msg in data %}
+<tr>
+<td>{{ msg[0] }}</td>
+<td>{{ msg[1] }}</td>
+<td>{{ msg[2] }}</td>
+<td>{{ msg[3] }}</td>
+</tr>
+{% endfor %}
+
 </table>
-
-<br>
-<a href="/">⬅ Back to Portfolio</a>
 
 </body>
 </html>
