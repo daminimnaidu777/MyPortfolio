@@ -1,89 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Damini M Naidu Portfolio</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Damini M Naidu Portfolio</title>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-    <h2>Portfolio.</h2>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#cert">Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-text">
-        <h1>Hello, It's Me</h1>
-        <h2>Damini M Naidu</h2>
-        <h3>And I'm a <span>Web Developer</span></h3>
-        <p>I create modern and aesthetic websites.</p>
-    </div>
-
-    <div class="hero-img">
-        <img src="/static/images/profile.jpg">
-    </div>
-</section>
+<div class="hero">
+    <h1 class="glow">🔥 Damini M Naidu Portfolio</h1>
+    <h2 class="typing">Creative Developer | Dreamer | Achiever</h2>
+</div>
 
 <!-- ABOUT -->
-<section id="about" class="section">
-    <h2>About Me</h2>
-    <p>I am passionate about technology and building creative websites.</p>
+<section id="about">
+<h2>About Me</h2>
+
+<div class="card floating">
+<p>
+I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University. 
+I am a highly motivated, hardworking, and goal-oriented individual with a strong sense of independence and self-discipline. 
+I believe in taking initiative, embracing challenges, and consistently striving for excellence in everything I do. 
+With a passion for growth and continuous learning, I aim to build a successful path by combining dedication, creativity, and determination.
+</p>
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2>✨ Academic Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="content">
+<h3>🏫 School</h3>
+<p>Mother Theresa Memorial School</p>
+<p>Montessori to 10th</p>
+<span>2010 – 2023</span>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="content">
+<h3>📘 PU College</h3>
+<p>East Point PU College</p>
+<p>11th – 12th</p>
+<span>2023 – 2025</span>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="content">
+<h3>🎓 Degree</h3>
+<p>Kristu Jayanti University</p>
+<p>BCA</p>
+<span>2025 – 2028</span>
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="section">
-    <h2>Skills</h2>
-
-    <div class="cards">
-        <div class="card">HTML</div>
-        <div class="card">CSS</div>
-        <div class="card">Python</div>
-        <div class="card">Flask</div>
-    </div>
+<section id="skills">
+<h2>Skills</h2>
+<div class="card">HTML | CSS | Python | Flask | SQL</div>
 </section>
 
 <!-- CERTIFICATES -->
-<section id="cert" class="section">
-    <h2>Certificates</h2>
-
-    <div class="cards">
-        <a href="/static/images/cert1.pdf" target="_blank" class="pdf-btn">Digital Engineering</a>
-        <a href="/static/images/cert2.pdf" target="_blank" class="pdf-btn">GitHub</a>
-        <a href="/static/images/cert3.pdf" target="_blank" class="pdf-btn">Node.Js</a>
-        <a href="/static/images/cert4.pdf" target="_blank" class="pdf-btn">Front End Web Developer</a>
-    </div>
+<section id="certificates">
+<h2>Certificates</h2>
+<div class="card">
+<a href="/static/cert1.pdf" target="_blank">📄 Digital Engineering</a><br><br>
+<a href="/static/cert2.pdf" target="_blank">📄 GitHub</a><br><br>
+<a href="/static/cert3.pdf" target="_blank">📄 Node.JS</a><br><br>
+<a href="/static/cert4.pdf" target="_blank">📄 Front End Web Developer</a>
+</div>
 </section>
 
 <!-- CONTACT -->
-<!-- CONTACT -->
-<section id="contact" class="section">
-    <h2>Contact Me</h2>
+<section id="contact">
+<h2>Contact Me</h2>
 
-    <form action="/contact" method="POST">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" required></textarea> <!-- added required -->
-        <button type="submit">Send</button>
-    </form>
+<form action="/contact" method="POST">
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="email" name="email" placeholder="Your Email" required><br>
+<textarea name="message" placeholder="Your Message" required></textarea><br>
+
+<button type="submit">Send Message 🚀</button>
+</form>
+
 </section>
 
 <!-- FOOTER -->
 <footer>
-<hr>    
-    <p>Email: daminimnaidu777@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/daminimnaidu777" target="_blank">Click Here</a></p>
+<p>📧 daminimnaidu777@gmail.com</p>
+<p>💻 GitHub: https://github.com/daminimnaidu777</p>
+<p>🔗 LinkedIn: https://www.linkedin.com/in/damini-m-naidu-54b00838b</p>
+<p>© 2026 Damini. All Rights Reserved.</p>
+</footer>
 
-    <p>© 2026 Damini M Naidu | All Rights Reserved</p>
-</footer>    
 </body>
 </html>

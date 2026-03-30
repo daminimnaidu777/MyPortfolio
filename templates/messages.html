@@ -1,70 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Messages</title>
-    <style>
-        body {
-            background: #0f172a;
-            color: white;
-            font-family: Arial;
-            text-align: center;
-        }
-
-        h1 {
-            color: #00f5ff;
-        }
-
-        table {
-            margin: auto;
-            border-collapse: collapse;
-            width: 80%;
-            margin-top: 30px;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid #00f5ff;
-        }
-
-        th {
-            background: #020617;
-        }
-
-        tr:hover {
-            background: #1e293b;
-        }
-
-        a {
-            color: #00f5ff;
-            text-decoration: none;
-        }
-    </style>
+<title>Messages</title>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
 
-<h1>📩 All Messages (Admin Page)</h1>
+<h1>📩 All Messages</h1>
 
 <table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Message</th>
-    </tr>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Message</th>
+</tr>
 
-    {% for msg in data %}
-    <tr>
-        <td>{{ msg[0] }}</td>
-        <td>{{ msg[1] }}</td>
-        <td>{{ msg[2] }}</td>
-        <td>{{ msg[3] }}</td>
-    </tr>
-    {% endfor %}
+{% for msg in data %}
+<tr>
+<td>{{msg[0]}}</td>
+<td>{{msg[1]}}</td>
+<td>{{msg[2]}}</td>
+<td>{{msg[3]}}</td>
+</tr>
+{% endfor %}
+
 </table>
 
-<br><br>
-<a href="/">⬅ Back to Portfolio</a>
+<a href="/">⬅ Back</a>
 
 </body>
 </html>

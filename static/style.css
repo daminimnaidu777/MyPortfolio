@@ -1,97 +1,82 @@
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0f172a;
+    font-family: 'Segoe UI';
+    background: radial-gradient(circle at top, #0f172a, #020617);
     color: white;
+    scroll-behavior: smooth;
 }
 
-/* NAVBAR */
 nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 20px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 15px;
+    text-align: center;
 }
 
 nav a {
-    color: white;
+    color: #00f5ff;
+    margin: 15px;
     text-decoration: none;
 }
 
 /* HERO */
 .hero {
+    height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 80px;
+    flex-direction: column;
 }
 
-/* TEXT */
-.hero-text h2 {
-    font-size: 40px;
+.glow {
+    font-size: 50px;
+    text-shadow: 0 0 20px #00f5ff;
 }
 
-.hero-text span {
-    color: #00f5ff;
+/* TYPING */
+.typing {
+    border-right: 3px solid #00f5ff;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(30), blink 0.5s infinite;
 }
 
-/* HEXAGON IMAGE */
-.hero-img img {
-    width: 250px;
-    clip-path: polygon(
-        25% 5%, 75% 5%, 
-        100% 50%, 
-        75% 95%, 
-        25% 95%, 
-        0% 50%
-    );
-    border: 3px solid #00f5ff;
-    box-shadow: 0 0 25px #00f5ff;
+@keyframes typing {
+    from {width:0}
+    to {width:100%}
+}
+
+@keyframes blink {
+    50% {border-color: transparent}
 }
 
 /* SECTION */
-.section {
-    padding: 50px;
+section {
+    padding: 100px 20px;
     text-align: center;
 }
 
-/* CARDS */
-.cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
+/* CARD */
 .card {
-    background: #1e293b;
+    background: rgba(255,255,255,0.05);
     padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    border: 1px solid #00f5ff;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 20px;
 }
 
-/* CERTIFICATE IMAGES */
-.cards img {
-    width: 200px;
-    margin: 10px;
-    border-radius: 10px;
-    border: 1px solid #00f5ff;
+.card:hover {
+    box-shadow: 0 0 20px #00f5ff;
 }
 
 /* FORM */
 input, textarea {
-    display: block;
-    margin: 10px auto;
+    width: 60%;
     padding: 10px;
-    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
 }
 
 /* BUTTON */
@@ -99,63 +84,35 @@ button {
     padding: 10px 20px;
     background: #00f5ff;
     border: none;
-    color: black;
-    cursor: pointer;
+    border-radius: 10px;
 }
 
 /* FOOTER */
 footer {
-    text-align: center;
+    background: black;
     padding: 20px;
-    background: #020617;
-}
-.pdf-btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    background: #00f5ff;
-    color: black;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
+    margin-top: 50px;
 }
 
-.pdf-btn:hover {
-    box-shadow: 0 0 15px #00f5ff;
-}
-footer {
-    text-align: center;      /* centers everything */
-    padding: 30px;
-    background: #020617;
+/* SUCCESS PAGE */
+.success-page {
+    text-align: center;
+    padding-top: 150px;
+    animation: glow 2s infinite alternate;
 }
 
-footer p {
-    margin: 5px;
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00f5ff; }
+    to { text-shadow: 0 0 40px #00f5ff; }
 }
 
-footer a {
-    color: #00f5ff;
-    text-decoration: none;
+/* TABLE */
+table {
+    margin: auto;
+    border-collapse: collapse;
 }
 
-footer a:hover {
-    text-decoration: underline;
-}
-footer {
-    text-align: center;      /* centers everything */
-    padding: 30px;
-    background: #020617;
-}
-
-footer p {
-    margin: 5px;
-}
-
-footer a {
-    color: #00f5ff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+td, th {
+    border: 1px solid white;
+    padding: 10px;
 }
