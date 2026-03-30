@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-
 <body>
 
-<h1 style="text-align:center;">📩 Messages</h1>
+<h1>Admin Messages</h1>
 
-<table border="1" style="margin:auto;">
+<table border="1">
 <tr>
-<th>ID</th>
-<th>Name</th>
-<th>Email</th>
-<th>Message</th>
+<th>ID</th><th>Name</th><th>Email</th><th>Message</th>
 </tr>
 
 {% for msg in data %}

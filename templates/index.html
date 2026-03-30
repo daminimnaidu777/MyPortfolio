@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Damini Portfolio</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- 🦋 BUTTERFLIES -->
-<div class="butterfly"></div>
-<div class="butterfly2"></div>
+<!-- BUTTERFLIES -->
+<div class="butterflies">
+    <span>🦋</span><span>🦋</span><span>🦋</span>
+</div>
+
+<!-- FIREFLIES -->
+<div class="fireflies"></div>
 
 <!-- NAVBAR -->
 <nav>
-<h2>🦋 Damini M Naidu</h2>
-<div>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#certificates">Certificates</a>
-<a href="#contact">Contact</a>
-</div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-<img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
-
-<h1 class="glow">Damini M Naidu</h1>
-<p class="typing">Creative Developer | Dreamer | Achiever</p>
+<section id="home" class="parallax hero">
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
+    <h1>Damini M Naidu</h1>
+    <p>Creative Developer ✨</p>
 </section>
 
 <!-- ABOUT -->
-<section id="about" data-aos="fade-up">
+<section id="about" class="section">
 <h2>About Me</h2>
 <p>
 I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University. 
@@ -43,80 +44,71 @@ I am passionate about technology, creativity, and building unique digital experi
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
+<section id="education" class="parallax2 section">
 <h2>Education</h2>
-
-<div class="card">🎓 School<br>Mother Theresa Memorial School (2010–2023)</div>
-<div class="card">🎓 PU College<br>East Point PU College (2023–2025)</div>
-<div class="card">🎓 Degree<br>Kristu Jayanti University BCA (2025–2028)</div>
-
+<div class="card">School - Mother Theresa Memorial School (2010–2023)</div>
+<div class="card">College - East Point PU College (2023–2025)</div>
+<div class="card">Degree - Kristu Jayanti University (2025–2028)</div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" class="section">
 <h2>Skills</h2>
-<div class="card">HTML</div>
-<div class="card">CSS</div>
-<div class="card">JavaScript</div>
 <div class="card">Python</div>
+<div class="card">HTML, CSS, JS</div>
+<div class="card">PostgreSQL</div>
 </section>
 
 <!-- CERTIFICATES -->
-<section id="certificates">
+<section id="certificates" class="parallax3 section">
 <h2>Certificates</h2>
 
 <div class="card">
-<a href="{{ url_for('static', filename='certificates/cert1.pdf') }}" target="_blank">Digital Engineering</a>
+<a href="{{ url_for('static', filename='images/cert1.pdf') }}" target="_blank">Open Digital Engineering</a>
 </div>
 
 <div class="card">
-<a href="{{ url_for('static', filename='certificates/cert2.pdf') }}" target="_blank">GitHub</a>
+<a href="{{ url_for('static', filename='images/cert2.pdf') }}" target="_blank">Open GitHub</a>
 </div>
 
 <div class="card">
-<a href="{{ url_for('static', filename='certificates/cert3.pdf') }}" target="_blank">Node.JS</a>
+<a href="{{ url_for('static', filename='images/cert3.pdf') }}" target="_blank">Open Node.JS</a>
 </div>
- 
+
 <div class="card">
-<a href="{{ url_for('static', filename='certificates/cert4.pdf') }}" target="_blank">Front End Web Developer</a>
+<a href="{{ url_for('static', filename='images/cert4.pdf') }}" target="_blank">Open Front End Web Developer</a>
 </div>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="section">
 <h2>Contact Me</h2>
 
 <form action="/contact" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Message" required></textarea>
-<button type="submit">Send 🚀</button>
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="email" name="email" placeholder="Your Email" required><br>
+<textarea name="message" placeholder="Your Message" required></textarea><br>
+<button type="submit">Send</button>
 </form>
+
+<div class="links">
+<a href="mailto:daminimnaidu777@gmail.com">Gmail</a>
+<a href="https://github.com/daminimnaidu777" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/damini-m-naidu-54b00838b" target="_blank">LinkedIn</a>
+</div>
 
 </section>
 
-<!-- FOOTER -->
 <footer>
-<p>© 2026 Damini M Naidu | All Rights Reserved</p>
-
-<a href="https://github.com/daminimnaidu777" target="_blank">GitHub</a> |
-<a href="https://www.linkedin.com/in/damini-m-naidu-54b00838b" target="_blank">LinkedIn</a> |
-<a href="mailto:daminimnaidu777@gmail.com">Gmail</a>
+© 2026 Damini M Naidu | All Rights Reserved
 </footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
 
 </body>
 </html>
 
-https://www.linkedin.com/in/damini-m-naidu-54b00838b
 
-<div class="card">
-<a href="{{ url_for('static', filename='certificates/cert3.pdf') }}" target="_blank">Node.JS</a>
-</div>
- 
-<div class="card">
-<a href="{{ url_for('static', filename='certificates/cert4.pdf') }}" target="_blank">Front End Web Developer</a>
-</div>
+
+
+
+
