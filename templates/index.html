@@ -3,113 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <title>Damini M Naidu Portfolio</title>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- 🔥 NAVBAR -->
 <nav>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#certificates">Certificates</a>
-<a href="#contact">Contact</a>
+    <h2>🔥 Damini M Naidu</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
-<div class="hero">
-    <h1 class="glow">🔥 Damini M Naidu Portfolio</h1>
-    <h2 class="typing">Creative Developer | Dreamer | Achiever</h2>
-</div>
+<!-- 🔥 HERO SECTION -->
+<section class="hero">
+    <div class="hero-content" data-aos="zoom-in">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
+        <h1>Damini M Naidu</h1>
+        <p class="typing">Creative Developer | Dreamer | Achiever</p>
+    </div>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>About Me</h2>
-
-<div class="card floating">
-<p>
-I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University. 
-I am a highly motivated, hardworking, and goal-oriented individual with a strong sense of independence and self-discipline. 
-I believe in taking initiative, embracing challenges, and consistently striving for excellence in everything I do. 
-With a passion for growth and continuous learning, I aim to build a successful path by combining dedication, creativity, and determination.
-</p>
-</div>
-
+    <!-- 🔥 ANIMATED BACKGROUND -->
+    <div class="particles"></div>
 </section>
 
-<!-- EDUCATION -->
+<!-- 🔥 ABOUT -->
+<section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+        I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University. 
+        I am a highly motivated, goal-oriented, and independent individual with a strong passion for technology and creativity. 
+        I constantly strive to improve myself, embrace challenges, and build impactful digital experiences through innovation and dedication.
+    </p>
+</section>
+
+<!-- 🎓 EDUCATION -->
 <section id="education">
-<h2>✨ Academic Journey</h2>
+<h2>Education</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
 <div class="content">
-<h3>🏫 School</h3>
+<h3>School</h3>
 <p>Mother Theresa Memorial School</p>
-<p>Montessori to 10th</p>
-<span>2010 – 2023</span>
+<p>2010 - 2023</p>
 </div>
 </div>
 
 <div class="timeline-item">
 <div class="content">
-<h3>📘 PU College</h3>
+<h3>PU College</h3>
 <p>East Point PU College</p>
-<p>11th – 12th</p>
-<span>2023 – 2025</span>
+<p>2023 - 2025</p>
 </div>
 </div>
 
 <div class="timeline-item">
 <div class="content">
-<h3>🎓 Degree</h3>
+<h3>Degree (BCA)</h3>
 <p>Kristu Jayanti University</p>
-<p>BCA</p>
-<span>2025 – 2028</span>
+<p>2025 - 2028</p>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- SKILLS -->
+<!-- 💻 SKILLS -->
 <section id="skills">
 <h2>Skills</h2>
-<div class="card">HTML | CSS | Python | Flask | SQL</div>
+
+<div class="card">HTML</div>
+<div class="card">CSS</div>
+<div class="card">JavaScript</div>
+<div class="card">Python</div>
+
 </section>
 
-<!-- CERTIFICATES -->
+<!-- 📜 CERTIFICATES -->
 <section id="certificates">
 <h2>Certificates</h2>
+
 <div class="card">
-<a href="/static/cert1.pdf" target="_blank">📄 Digital Engineering</a><br><br>
-<a href="/static/cert2.pdf" target="_blank">📄 GitHub</a><br><br>
-<a href="/static/cert3.pdf" target="_blank">📄 Node.JS</a><br><br>
-<a href="/static/cert4.pdf" target="_blank">📄 Front End Web Developer</a>
+<a href="{{ url_for('static', filename='certificates/cert1.pdf') }}" target="_blank">Digital Engineering</a>
 </div>
+
+<div class="card">
+<a href="{{ url_for('static', filename='certificates/cert2.pdf') }}" target="_blank">GitHub</a>
+</div>
+ 
+<div class="card">
+<a href="{{ url_for('static', filename='certificates/cert3.pdf') }}" target="_blank">Node.JS</a>
+</div>
+ 
+<div class="card">
+<a href="{{ url_for('static', filename='certificates/cert4.pdf') }}" target="_blank">Front End Web Developer</a>
+</div>
+
+
 </section>
 
-<!-- CONTACT -->
+<!-- 📩 CONTACT -->
 <section id="contact">
 <h2>Contact Me</h2>
 
 <form action="/contact" method="POST">
-<input type="text" name="name" placeholder="Your Name" required><br>
-<input type="email" name="email" placeholder="Your Email" required><br>
-<textarea name="message" placeholder="Your Message" required></textarea><br>
-
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" required></textarea>
 <button type="submit">Send Message 🚀</button>
 </form>
 
 </section>
 
-<!-- FOOTER -->
+<!-- 🔥 FOOTER -->
 <footer>
-<p>📧 daminimnaidu777@gmail.com</p>
-<p>💻 GitHub: https://github.com/daminimnaidu777</p>
-<p>🔗 LinkedIn: https://www.linkedin.com/in/damini-m-naidu-54b00838b</p>
-<p>© 2026 Damini. All Rights Reserved.</p>
+<p>© 2026 Damini M Naidu | All Rights Reserved</p>
+
+<div class="socials">
+<a href="https://github.com/daminimnaidu777" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/damini-m-naidu-54b00838b" target="_blank">LinkedIn</a>
+<a href="mailto:daminimnaidu777@gmail.com">Gmail</a>
+</div>
+
 </footer>
+
+<!-- JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
 
 </body>
 </html>

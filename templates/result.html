@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/static/style.css">
+    <title>Message Sent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body class="success-page">
+<body class="center-page">
 
-<h1>✨ Message Sent Successfully ✨</h1>
-<p>Thank you {{name}} 🦋</p>
+<div class="success-box">
+    <h1>🚀 Message Sent Successfully!</h1>
+    <p>Thank you, <b>{{ name }}</b> 💙</p>
+    <p>I’ll get back to you soon.</p>
 
-<a href="/" class="back-btn">Go Back Home</a>
+    <a href="/" class="btn">Go Back Home</a>
+</div>
 
 </body>
 </html>
