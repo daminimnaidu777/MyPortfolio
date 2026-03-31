@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Message Sent</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+<body class="center">
 
-<body>
+<h1 class="glow">✅ Message Sent Successfully</h1>
+<p>Thank you {{name}}!</p>
 
-<section class="hero">
-
-    <h1 class="glitch" data-text="MESSAGE SENT">MESSAGE SENT</h1>
-
-    <p>Thank you <b>{{ name }}</b> ⚡</p>
-
-    <p>Your message has been successfully delivered.</p>
-
-    <a href="/" class="btn">Go Back Home</a>
-
-</section>
+<a href="/"><button class="neon-btn">Back</button></a>
 
 </body>
 </html>

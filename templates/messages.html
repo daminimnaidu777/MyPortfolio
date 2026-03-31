@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin - Messages</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>Admin</title>
 </head>
+<body style="background:black;color:white">
 
-<body>
+<h1>Messages</h1>
 
-<section>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th></tr>
 
-    <h2>📩 All Messages</h2>
+{% for row in data %}
+<tr>
+<td>{{row[0]}}</td>
+<td>{{row[1]}}</td>
+<td>{{row[2]}}</td>
+<td>{{row[3]}}</td>
+</tr>
+{% endfor %}
 
-    <table border="1" cellpadding="10" cellspacing="0" style="margin:auto; background:black; color:white;">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-        </tr>
-
-        {% for msg in data %}
-        <tr>
-            <td>{{ msg[0] }}</td>
-            <td>{{ msg[1] }}</td>
-            <td>{{ msg[2] }}</td>
-            <td>{{ msg[3] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-
-    <br><br>
-
-    <a href="/" class="btn">Go Back</a>
-
-</section>
+</table>
 
 </body>
 </html>
