@@ -1,118 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Damini Portfolio</title>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Damini Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<div class="cursor"></div>
-
 <!-- NAV -->
 <nav>
-<h1 class="logo">DAMINI</h1>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#certificates">Certificates</a>
-<a href="#contact">Contact</a>
+    <h1 class="logo">DAMINI M NAIDU</h1>
+    <div>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
-<h1 class="glow">Damini M Naidu</h1>
-<p class="subtitle">Cyberpunk Developer ⚡ Data Driven Storytelling</p>
+    <h1 class="glitch" data-text="DAMINI M NAIDU">DAMINI M NAIDU</h1>
+
+    <p class="tagline">
+        Cyberpunk Developer ⚡ Data Driven Storytelling
+    </p>
+
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
+
+    <a href="#contact" class="btn">CONTACT ME</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-<h2>ABOUT</h2>
-<p>
-I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University.
-I am a highly motivated, goal-oriented and independent individual driven by innovation and creativity in technology.
-</p>
+    <h2>ABOUT</h2>
+    <p>
+        I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University.
+        I am a highly motivated, goal-oriented and independent individual driven by innovation and creativity in technology.
+    </p>
 </section>
 
 <!-- EDUCATION -->
 <section id="education">
-<h2>EDUCATION</h2>
+    <h2>EDUCATION</h2>
 
-<div class="card">Mother Theresa Memorial School (2010–2023)</div>
-<div class="card">East Point PU College (2023–2025)</div>
-<div class="card">Kristu Jayanti University - BCA (2025–2028)</div>
+    <div class="card">
+        <h3>School</h3>
+        <p>Mother Theresa Memorial School (2010–2023)</p>
+    </div>
 
+    <div class="card">
+        <h3>PU College</h3>
+        <p>East Point PU College (2023–2025)</p>
+    </div>
+
+    <div class="card">
+        <h3>Degree</h3>
+        <p>BCA - Kristu Jayanti University (2025–2028)</p>
+    </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<h2>SKILLS</h2>
+    <h2>SKILL TELEMETRY</h2>
 
-<div class="card">Python</div>
-<div class="card">HTML CSS JavaScript</div>
-<div class="card">PostgreSQL</div>
+    <div class="skill">
+        <p>Python</p>
+        <div class="bar"><div style="width:88%"></div></div>
+    </div>
 
+    <div class="skill">
+        <p>HTML/CSS</p>
+        <div class="bar"><div style="width:82%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="bar"><div style="width:76%"></div></div>
+    </div>
 </section>
 
 <!-- CERTIFICATES -->
 <section id="certificates">
-<h2>CERTIFICATES</h2>
+    <h2>CERTIFICATES</h2>
 
-<div class="card">
-<a href="{{ url_for('static', filename='images/cert1.pdf') }}" target="_blank">Digital Engineering</a>
-</div>
-
-<div class="card">
-<a href="{{ url_for('static', filename='images/cert2.pdf') }}" target="_blank">GitHub</a>
-</div>
-
-<div class="card">
-<a href="{{ url_for('static', filename='images/cert3.pdf') }}" target="_blank">Node.JS</a>
-</div>
-
-<div class="card">
-<a href="{{ url_for('static', filename='images/cert4.pdf') }}" target="_blank">Front End Web Development</a>
-</div>
-
+    <a href="{{ url_for('static', filename='images/cert1.pdf') }}" target="_blank">Digital Engineering</a><br>
+    <a href="{{ url_for('static', filename='images/cert2.pdf') }}" target="_blank">GitHub</a><br>
+    <a href="{{ url_for('static', filename='images/cert3.pdf') }}" target="_blank">Node.JS</a><br>
+    <a href="{{ url_for('static', filename='images/cert4.pdf') }}" target="_blank">Front End Web Development</a>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<h2>CONTACT</h2>
+    <h2>CONTACT</h2>
 
-<form action="/contact" method="POST">
-<input type="text" name="name" placeholder="Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Message" required></textarea>
+    <form action="/contact" method="POST" class="contact-form">
+        
+        <input type="text" name="name" placeholder="Enter your name" required>
 
-<button type="submit">SEND</button>
-</form>
+        <input type="email" name="email" placeholder="Enter your email" required>
 
-<div class="links">
-<a href="mailto:daminimnaidu777@gmail.com">Gmail</a>
-<a href="https://github.com/daminimnaidu777" target="_blank">GitHub</a>
-<a href="https://www.linkedin.com/in/damini-m-naidu-54b00838b" target="_blank">LinkedIn</a>
-</div>
+        <textarea name="message" placeholder="Type your message..." rows="5" required></textarea>
 
+        <!-- 👇 SEND BUTTON BELOW -->
+        <button type="submit" class="send-btn">SEND MESSAGE ⚡</button>
+
+    </form>
+
+    <br>
+
+    <a href="https://github.com/daminimnaidu777" target="_blank">GitHub</a><br>
+    <a href="https://www.linkedin.com/in/damini-m-naidu-54b00838b" target="_blank">LinkedIn</a>
+    <a href="mailto:daminimnaidu777@gmail.com">Gmail</a>
 </section>
 
 <footer>
-© 2026 DAMINI M NAIDU | ALL RIGHTS RESERVED
+    © 2026 Damini M Naidu | All Rights Reserved
 </footer>
-
-<script>
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', e => {
-cursor.style.top = e.clientY + 'px';
-cursor.style.left = e.clientX + 'px';
-});
-</script>
 
 </body>
 </html>
+
+"https://www.linkedin.com/in/damini-m-naidu-54b00838b"
 
 
