@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Messages</title>
+<title>Admin</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<h1>All Messages</h1>
-
-<table border="1">
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Email</th>
-<th>Message</th>
-</tr>
+<h1 class="glow">ADMIN PANEL</h1>
 
 {% for msg in data %}
-<tr>
-<td>{{ msg[0] }}</td>
-<td>{{ msg[1] }}</td>
-<td>{{ msg[2] }}</td>
-<td>{{ msg[3] }}</td>
-</tr>
+<div class="card">
+<h3>{{ msg[1] }}</h3>
+<p>{{ msg[2] }}</p>
+<p>{{ msg[3] }}</p>
+</div>
 {% endfor %}
-
-</table>
 
 </body>
 </html>

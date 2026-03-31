@@ -4,19 +4,20 @@ import os
 
 app = Flask(__name__)
 
-# GET DATABASE URL
+# DATABASE URL
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# FIX for Render
+# FIX for Render (important)
 if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
+# CONNECT DATABASE
 def get_db():
     if not DATABASE_URL:
         raise ValueError("DATABASE_URL is not set")
     return psycopg2.connect(DATABASE_URL)
 
-# CREATE TABLE
+# CREATE TABLE AUTOMATICALLY
 def init_db():
     conn = get_db()
     cur = conn.cursor()
@@ -34,14 +35,8 @@ def init_db():
     cur.close()
     conn.close()
 
-# INIT ROUTE
-@app.route('/init')
-def initialize():
-    try:
-        init_db()
-        return "✅ Database initialized successfully!"
-    except Exception as e:
-        return f"❌ Error: {str(e)}"
+# RUN ON START
+init_db()
 
 # HOME PAGE
 @app.route('/')
@@ -73,9 +68,9 @@ def contact():
     except Exception as e:
         return f"❌ Error: {str(e)}"
 
-# VIEW MESSAGES
-@app.route('/messages')
-def messages():
+# ADMIN PAGE (UPDATED)
+@app.route('/admin')
+def admin():
     try:
         conn = get_db()
         cur = conn.cursor()
@@ -91,5 +86,5 @@ def messages():
     except Exception as e:
         return f"❌ Error: {str(e)}"
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# OPTIONAL INIT ROUTE (keep if you want)
+@app.route('/init')

@@ -10,99 +10,109 @@
 
 <body>
 
-<!-- NAVBAR -->
+<div class="cursor"></div>
+
+<!-- NAV -->
 <nav>
-    <h2>Damini</h2>
-    <div>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#contact">Contact</a>
-    </div>
+<h1 class="logo">DAMINI</h1>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-    <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
-    <h1>Damini M Naidu</h1>
-    <p class="neon-text">Creative Developer | Thinker | Achiever </p>
+<img src="{{ url_for('static', filename='images/profile.jpg') }}" class="profile">
+<h1 class="glow">Damini M Naidu</h1>
+<p class="subtitle">Cyberpunk Developer ⚡ Data Driven Storytelling</p>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University.
-        I am a highly motivated, goal-oriented and independent individual passionate about technology and creativity.
-    </p>
+<h2>ABOUT</h2>
+<p>
+I am currently pursuing my Bachelor of Computer Applications (BCA) at Kristu Jayanti University.
+I am a highly motivated, goal-oriented and independent individual driven by innovation and creativity in technology.
+</p>
 </section>
 
 <!-- EDUCATION -->
 <section id="education">
-    <h2>Education</h2>
+<h2>EDUCATION</h2>
 
-    <div class="card">Mother Theresa Memorial School (2010–2023)</div>
-    <div class="card">East Point PU College (2023–2025)</div>
-    <div class="card">Kristu Jayanti University - BCA (2025–2028)</div>
+<div class="card">Mother Theresa Memorial School (2010–2023)</div>
+<div class="card">East Point PU College (2023–2025)</div>
+<div class="card">Kristu Jayanti University - BCA (2025–2028)</div>
 
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-    <h2>Skills</h2>
+<h2>SKILLS</h2>
 
-    <div class="card">Python</div>
-    <div class="card">HTML, CSS, JavaScript</div>
-    <div class="card">PostgreSQL</div>
+<div class="card">Python</div>
+<div class="card">HTML CSS JavaScript</div>
+<div class="card">PostgreSQL</div>
 
 </section>
 
 <!-- CERTIFICATES -->
 <section id="certificates">
-    <h2>Certificates</h2>
+<h2>CERTIFICATES</h2>
 
-    <div class="card">
-        <a href="{{ url_for('static', filename='images/cert1.pdf') }}" target="_blank">📄 Certificate 1</a>
-    </div>
+<div class="card">
+<a href="{{ url_for('static', filename='images/cert1.pdf') }}" target="_blank">Digital Engineering</a>
+</div>
 
-    <div class="card">
-        <a href="{{ url_for('static', filename='images/cert2.pdf') }}" target="_blank">📄 Certificate 2</a>
-    </div>
+<div class="card">
+<a href="{{ url_for('static', filename='images/cert2.pdf') }}" target="_blank">GitHub</a>
+</div>
 
-    <div class="card">
-        <a href="{{ url_for('static', filename='images/cert3.pdf') }}" target="_blank">📄 Certificate 3</a>
-    </div>
+<div class="card">
+<a href="{{ url_for('static', filename='images/cert3.pdf') }}" target="_blank">Node.JS</a>
+</div>
 
-    <div class="card">
-        <a href="{{ url_for('static', filename='images/cert4.pdf') }}" target="_blank">📄 Certificate 4</a>
-    </div>
+<div class="card">
+<a href="{{ url_for('static', filename='images/cert4.pdf') }}" target="_blank">Front End Web Development</a>
+</div>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Me</h2>
+<h2>CONTACT</h2>
 
-    <form action="/contact" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+<form action="/contact" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Message" required></textarea>
 
-        <button type="submit">Send Message</button>
-    </form>
+<button type="submit">SEND</button>
+</form>
 
-    <div class="links">
-        <a href="mailto:daminimnaidu777@gmail.com">Gmail</a>
-        <a href="https://github.com/daminimnaidu777" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/damini-m-naidu-54b00838b" target="_blank">LinkedIn</a>
-    </div>
+<div class="links">
+<a href="mailto:daminimnaidu777@gmail.com">Gmail</a>
+<a href="https://github.com/daminimnaidu777" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/damini-m-naidu-54b00838b" target="_blank">LinkedIn</a>
+</div>
 
 </section>
 
 <footer>
-    © 2026 Damini M Naidu | All Rights Reserved
+© 2026 DAMINI M NAIDU | ALL RIGHTS RESERVED
 </footer>
+
+<script>
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', e => {
+cursor.style.top = e.clientY + 'px';
+cursor.style.left = e.clientX + 'px';
+});
+</script>
 
 </body>
 </html>
+
+

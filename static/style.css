@@ -1,98 +1,116 @@
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #000;
-    color: white;
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial;
 }
 
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: black;
-    position: sticky;
-    top: 0;
+/* CURSOR */
+.cursor{
+    width:15px;
+    height:15px;
+    background:cyan;
+    position:fixed;
+    border-radius:50%;
+    pointer-events:none;
+    box-shadow:0 0 20px cyan;
 }
 
-nav a {
-    color: cyan;
-    margin: 10px;
-    text-decoration: none;
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:15px;
+    background:black;
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    color:#00f5ff;
+}
+
+/* LOGO */
+.logo{
+    position:absolute;
+    left:20px;
+    color:#00f5ff;
 }
 
 /* HERO */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
+.hero{
+    text-align:center;
+    padding:100px;
 }
 
-.profile {
-    width: 150px;
-    border-radius: 50%;
-    box-shadow: 0 0 20px cyan;
+/* PROFILE */
+.profile{
+    width:150px;
+    border-radius:50%;
+    box-shadow:0 0 20px cyan;
 }
 
-.neon-text {
-    color: cyan;
-    text-shadow: 0 0 10px cyan;
+/* GLOW TEXT */
+.glow{
+    color:#00f5ff;
+    text-shadow:0 0 20px #00f5ff,0 0 40px #ff00ff;
 }
 
 /* SECTIONS */
-section {
-    padding: 50px 20px;
-    text-align: center;
+section{
+    padding:60px;
+    text-align:center;
 }
 
 /* CARDS */
-.card {
-    background: #111;
-    margin: 15px auto;
-    padding: 20px;
-    width: 60%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px cyan;
+.card{
+    margin:15px auto;
+    padding:20px;
+    width:60%;
+    background:#111;
+    border:1px solid cyan;
+    box-shadow:0 0 15px cyan;
 }
 
 /* FORM */
-input, textarea {
-    width: 60%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: none;
+input,textarea{
+    width:60%;
+    padding:10px;
+    margin:10px;
+    background:black;
+    color:white;
+    border:1px solid cyan;
 }
 
 /* BUTTON */
-button {
-    padding: 10px 20px;
-    background: cyan;
-    border: none;
+button{
+    padding:10px;
+    background:cyan;
+    border:none;
 }
 
 /* LINKS */
-.links a {
-    margin: 10px;
-    color: cyan;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: black;
+.links a{
+    margin:10px;
+    color:#00f5ff;
 }
 
 /* SUCCESS */
-.success-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-.success-box {
-    background: black;
-    padding: 30px;
-    border: 1px solid cyan;
+.success{
+    border:1px solid cyan;
+    padding:30px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
 }
