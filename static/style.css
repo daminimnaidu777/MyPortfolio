@@ -1,82 +1,242 @@
 /* ========================= */
-/* 🔥 ULTRA GLITCH TEXT */
+/* RESET */
 /* ========================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #050816;
+    color: #e6f1ff;
+}
 
+/* ========================= */
+/* GRID BACKGROUND */
+/* ========================= */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(#00f5ff 1px, transparent 1px),
+        linear-gradient(90deg, #00f5ff 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.1;
+    animation: moveGrid 12s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveGrid {
+    to { transform: translate(-60px, -60px); }
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.7);
+    position: sticky;
+    top: 0;
+}
+
+nav h2 {
+    color: cyan;
+}
+
+nav a {
+    color: cyan;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-shadow: 0 0 10px cyan;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* ========================= */
+/* PROFILE IMAGE FIX */
+/* ========================= */
+.profile {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: 3px solid cyan;
+    box-shadow: 0 0 20px cyan;
+}
+
+/* ========================= */
+/* GLITCH TEXT */
+/* ========================= */
 .glitch {
     position: relative;
-    font-size: 55px;
+    font-size: 45px;
     font-weight: bold;
-    text-align: center;
-    letter-spacing: 3px;
-
-    /* hide original text */
     color: transparent;
 }
 
-/* MAIN WHITE TEXT */
 .glitch::before {
     content: attr(data-text);
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     color: white;
-
-    /* glow */
-    text-shadow: 
-        0 0 5px white,
-        0 0 10px white,
-        0 0 20px cyan;
-
-    z-index: 1;
+    text-shadow: 0 0 10px white, 0 0 20px cyan;
 }
 
-/* CYAN GLITCH LAYER */
 .glitch::after {
     content: attr(data-text);
     position: absolute;
-    top: 0;
     left: 2px;
     width: 100%;
     color: cyan;
-
-    /* neon glow */
-    text-shadow: 
-        0 0 5px cyan,
-        0 0 10px cyan,
-        0 0 20px cyan;
-
-    animation: glitchAnim 0.8s infinite;
-    z-index: 2;
+    animation: glitch 1s infinite;
+    text-shadow: 0 0 15px cyan;
 }
 
-/* MAGENTA FLASH (extra layer using span) */
-.glitch span {
-    position: absolute;
-    top: 0;
-    left: -2px;
-    width: 100%;
-    color: magenta;
-    text-shadow: 0 0 15px magenta;
-    animation: glitchAnim2 1s infinite;
-    z-index: 0;
-}
-
-/* ANIMATION 1 */
-@keyframes glitchAnim {
-    0%   { transform: translate(0); }
-    20%  { transform: translate(-2px, 2px); }
-    40%  { transform: translate(2px, -2px); }
-    60%  { transform: translate(-2px, 0); }
-    80%  { transform: translate(2px, 0); }
+@keyframes glitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px,2px); }
+    50% { transform: translate(2px,-2px); }
+    75% { transform: translate(-2px,0); }
     100% { transform: translate(0); }
 }
 
-/* ANIMATION 2 */
-@keyframes glitchAnim2 {
-    0%   { transform: translate(0); opacity: 0.7; }
-    25%  { transform: translate(2px, -2px); opacity: 1; }
-    50%  { transform: translate(-2px, 2px); opacity: 0.5; }
-    75%  { transform: translate(1px, -1px); opacity: 1; }
-    100% { transform: translate(0); opacity: 0.7; }
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: cyan;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 15px auto;
+    width: 70%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px cyan;
+}
+
+/* ========================= */
+/* SKILLS */
+/* ========================= */
+.skill {
+    width: 70%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.bar {
+    height: 8px;
+    background: #111;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, cyan, blue);
+    animation: load 2s;
+}
+
+@keyframes load {
+    from { width: 0 }
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+form {
+    width: 320px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+textarea {
+    height: 100px;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+button {
+    padding: 10px;
+    background: linear-gradient(45deg, cyan, blue);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    box-shadow: 0 0 15px cyan;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+.links a {
+    display: block;
+    margin: 8px;
+    color: cyan;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-shadow: 0 0 10px cyan;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    margin-top: 40px;
+}
+
+/* ========================= */
+/* RESULT PAGE */
+/* ========================= */
+.center {
+    text-align: center;
+    padding: 100px;
 }
