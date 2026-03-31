@@ -1,135 +1,82 @@
-body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: #050816;
-    color: white;
-}
+/* ========================= */
+/* 🔥 ULTRA GLITCH TEXT */
+/* ========================= */
 
-/* GRID BACKGROUND */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background-image: linear-gradient(#0ff 1px, transparent 1px),
-                      linear-gradient(90deg, #0ff 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.15;
-    animation: move 10s linear infinite;
-    z-index: -1;
-}
-@keyframes move {
-    to { transform: translate(-60px,-60px); }
-}
-
-/* NAV */
-nav {
-    display:flex;
-    justify-content:space-between;
-    padding:15px;
-}
-nav a {
-    color:cyan;
-    margin:10px;
-}
-
-/* HERO */
-.hero {
-    text-align:center;
-    padding:100px;
-}
-
-/* GLITCH TEXT */
 .glitch {
-    font-size:50px;
-    color:white;
-    position:relative;
+    position: relative;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+
+    /* hide original text */
+    color: transparent;
 }
-.glitch::before, .glitch::after {
+
+/* MAIN WHITE TEXT */
+.glitch::before {
     content: attr(data-text);
-    position:absolute;
-    left:0;
-}
-.glitch::before { color:cyan; animation: glitch 1s infinite; }
-.glitch::after { color:magenta; animation: glitch 1s infinite reverse; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
 
-@keyframes glitch {
-    0% { transform:translate(0); }
-    20% { transform:translate(-2px,2px); }
-    40% { transform:translate(2px,-2px); }
-}
+    /* glow */
+    text-shadow: 
+        0 0 5px white,
+        0 0 10px white,
+        0 0 20px cyan;
 
-/* PROFILE */
-.profile {
-    width:150px;
-    border-radius:50%;
-    box-shadow:0 0 20px cyan;
-    margin:20px;
+    z-index: 1;
 }
 
-/* BUTTON */
-.neon-btn {
-    padding:12px 25px;
-    background:linear-gradient(45deg,cyan,magenta);
-    border:none;
-    color:white;
-    cursor:pointer;
+/* CYAN GLITCH LAYER */
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 100%;
+    color: cyan;
+
+    /* neon glow */
+    text-shadow: 
+        0 0 5px cyan,
+        0 0 10px cyan,
+        0 0 20px cyan;
+
+    animation: glitchAnim 0.8s infinite;
+    z-index: 2;
 }
 
-/* SECTIONS */
-section { padding:60px; text-align:center; }
-
-.section-title {
-    color:cyan;
-    text-shadow:0 0 10px cyan;
+/* MAGENTA FLASH (extra layer using span) */
+.glitch span {
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 100%;
+    color: magenta;
+    text-shadow: 0 0 15px magenta;
+    animation: glitchAnim2 1s infinite;
+    z-index: 0;
 }
 
-/* CARD */
-.card {
-    background:rgba(255,255,255,0.05);
-    padding:20px;
-    margin:20px auto;
-    width:60%;
-    border-radius:10px;
+/* ANIMATION 1 */
+@keyframes glitchAnim {
+    0%   { transform: translate(0); }
+    20%  { transform: translate(-2px, 2px); }
+    40%  { transform: translate(2px, -2px); }
+    60%  { transform: translate(-2px, 0); }
+    80%  { transform: translate(2px, 0); }
+    100% { transform: translate(0); }
 }
 
-/* SKILLS */
-.skill { margin:20px; }
-.bar { background:#111; height:8px; }
-.fill {
-    height:100%;
-    background:linear-gradient(90deg,cyan,magenta);
-    animation:load 2s;
-}
-@keyframes load { from{width:0;} }
-
-/* FORM */
-form {
-    display:flex;
-    flex-direction:column;
-    width:300px;
-    margin:auto;
-}
-input, textarea { margin:10px; padding:10px; }
-
-/* LINKS */
-.links a {
-    display:block;
-    color:cyan;
-    margin:5px;
-}
-
-/* PARTICLES */
-.particle {
-    position:fixed;
-    width:3px;
-    height:3px;
-    background:cyan;
-    opacity:0.5;
-}
-
-/* CENTER */
-.center {
-    text-align:center;
-    padding:100px;
+/* ANIMATION 2 */
+@keyframes glitchAnim2 {
+    0%   { transform: translate(0); opacity: 0.7; }
+    25%  { transform: translate(2px, -2px); opacity: 1; }
+    50%  { transform: translate(-2px, 2px); opacity: 0.5; }
+    75%  { transform: translate(1px, -1px); opacity: 1; }
+    100% { transform: translate(0); opacity: 0.7; }
 }
